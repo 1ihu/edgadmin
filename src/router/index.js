@@ -53,19 +53,19 @@ export const constantRoutes = [
       {
         path: '/dashboard/person',
         name: 'person',
-        component: () => import('@/views/dashboard/index'),
+        component: () => import('@/views/Electricity/dashboard/index'),
         meta: { title: '人员管理', icon: 'people' }
       },
       {
         path: '/dashboard/levels',
         name: 'levels',
-        component: () => import('@/views/levels/index'),
+        component: () => import('@/views/Electricity/levels/index'),
         meta: { title: '等级管理', icon: 'levels' }
       },
       {
         path: '/dashboard/electrician',
         name: 'electrician',
-        component: () => import('@/views/electrician/index'),
+        component: () => import('@/views/Electricity/electrician/index'),
         meta: { title: '电工查询', icon: 'electrician' }
       },
       {
@@ -85,55 +85,55 @@ export const constantRoutes = [
       {
         path: '/base/tabs',
         name: 'tabs',
-        component: () => import('@/views/tabs/index'),
+        component: () => import('@/views/baseDeploy/tabs/index'),
         meta: { title: '标签库', icon: 'tabs' }
       },
       {
         path: '/base/profession',
         name: 'profession',
-        component: () => import('@/views/profession/index'),
+        component: () => import('@/views/baseDeploy/profession/index'),
         meta: { title: '工种库', icon: 'profession' }
       },
       {
         path: '/base/cardpack',
         name: 'cardpack',
-        component: () => import('@/views/cardpack/index'),
+        component: () => import('@/views/baseDeploy/cardpack/index'),
         meta: { title: '卡包库', icon: 'cardpack' }
       },
       {
         path: '/base/worknode',
         name: 'worknode',
-        component: () => import('@/views/worknode/index'),
+        component: () => import('@/views/baseDeploy/worknode/index'),
         meta: { title: '作业节点库', icon: 'worknode' }
       },
       {
         path: '/base/workguide',
         name: 'workguide',
-        component: () => import('@/views/workguide/index'),
+        component: () => import('@/views/baseDeploy/workguide/index'),
         meta: { title: '作业指导书', icon: 'workguide' }
       },
       {
         path: '/base/worktemplate',
         name: 'worktemplate',
-        component: () => import('@/views/worktemplate/index'),
+        component: () => import('@/views/baseDeploy/worktemplate/index'),
         meta: { title: '作业模版库', icon: 'worktemplate' }
       },
       {
         path: '/base/question',
         name: 'question',
-        component: () => import('@/views/question/index'),
+        component: () => import('@/views/baseDeploy/question/index'),
         meta: { title: '题库管理', icon: 'question' }
       },
       {
         path: '/base/redpacket',
         name: 'redpacket',
-        component: () => import('@/views/redpacket/index'),
+        component: () => import('@/views/baseDeploy/redpacket/index'),
         meta: { title: '红包管理', icon: 'redpacket' }
       },
       {
         path: '/base/indentset',
         name: 'indentset',
-        component: () => import('@/views/indentset/index'),
+        component: () => import('@/views/baseDeploy/indentset/index'),
         meta: { title: '订单设置', icon: 'indentset' }
       }
     ]
@@ -147,13 +147,13 @@ export const constantRoutes = [
       {
         path: '/agreement/setting',
         name: 'setting',
-        component: () => import('@/views/setting/index'),
+        component: () => import('@/views/agreement/setting/index'),
         meta: { title: '协议设置', icon: 'setting' }
       },
       {
         path: '/agreement/examine',
         name: 'examine',
-        component: () => import('@/views/examine/index'),
+        component: () => import('@/views/agreement/examine/index'),
         meta: { title: '协议查看', icon: 'examine' }
       }
     ]
