@@ -46,30 +46,30 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard/person',
+    redirect: '/Electricity/person',
     meta: { title: '电工管理', icon: 'person' },
     alwaysShow: true, // will always show the root menu
     children: [
       {
-        path: '/dashboard/person',
+        path: '/Electricity/person',
         name: 'person',
         component: () => import('@/views/Electricity/dashboard/index'),
         meta: { title: '人员管理', icon: 'people' }
       },
       {
-        path: '/dashboard/levels',
+        path: '/Electricity/levels',
         name: 'levels',
         component: () => import('@/views/Electricity/levels/index'),
         meta: { title: '等级管理', icon: 'levels' }
       },
       {
-        path: '/dashboard/electrician',
+        path: '/Electricity/electrician',
         name: 'electrician',
         component: () => import('@/views/Electricity/electrician/index'),
         meta: { title: '电工查询', icon: 'electrician' }
       },
       {
-        path: '/dashboard/voucher',
+        path: '/Electricity/voucher',
         name: 'voucher',
         component: () => import('@/views/Electricity/voucher/index'),
         meta: { title: '证件审核', icon: 'voucher' }
