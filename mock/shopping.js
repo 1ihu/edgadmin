@@ -17,7 +17,7 @@ const pub = {
   pageIndex: 1,
   pageSize: 10,
   startIndex: 0,
-  totalNum: 1,
+  totalNum: 30,
   totalPage: 1
 }
 export default [

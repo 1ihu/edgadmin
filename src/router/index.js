@@ -71,7 +71,7 @@ export const constantRoutes = [
       {
         path: '/dashboard/voucher',
         name: 'voucher',
-        component: () => import('@/views/voucher/index'),
+        component: () => import('@/views/Electricity/voucher/index'),
         meta: { title: '证件审核', icon: 'voucher' }
       }
     ]

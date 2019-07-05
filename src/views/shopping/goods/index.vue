@@ -18,18 +18,8 @@
             :value="item.value"
           />
         </el-select>
-        <el-input
-          v-model="commodityName"
-          placeholder="商品名称"
-          :size="size"
-          clearable
-        />
-        <el-input
-          v-model="commodityNo"
-          placeholder="商品编号"
-          :size="size"
-          clearable
-        />
+        <el-input v-model="commodityName" placeholder="商品名称" :size="size" clearable />
+        <el-input v-model="commodityNo" placeholder="商品编号" :size="size" clearable />
         <el-button class="marginleft" icon="el-icon-search" type="primary" @click="searchClick">搜索</el-button>
         <el-button class="marginleft" type="primary" @click="resetSearch">重置</el-button>
       </div>
@@ -70,17 +60,7 @@
         </template>
       </el-table-column>
     </el-table>
-
-    <el-pagination
-      class="paginationstyle"
-      :current-page="pageIndex"
-      :page-sizes="[10, 20, 30, 50]"
-      :page-size="pageSize"
-      layout="total, sizes, prev, pager, next, jumper"
-      :total="total"
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-    />
+    <pagination ref="pagination" />
   </div>
 </template>
 
@@ -91,7 +71,9 @@ import {
   removeCommodity,
   modifyCommodity
 } from '@/api/shopping'
+import pagination from '@/components/pagination'
 export default {
+  components: { pagination },
   data() {
     return {
       statusOptions: [
@@ -120,17 +102,14 @@ export default {
       commodityNo: '',
       tablebtn: 'mini',
       size: '',
-      total: 1,
-      pageSize: 10,
       listLoading: false,
-      pageIndex: 1,
       tableData: [],
       selection: [],
       searchData: {}
     }
   },
   created() {
-    this.search() // 拉去table
+    // this.search() // 拉去table
   },
   methods: {
     resetSearch() {
@@ -148,8 +127,7 @@ export default {
         commodityName: this.commodityName,
         commodityNo: this.commodityNo
       }
-      this.pageIndex = 1
-      this.search()
+      this.$refs.pagination.getData()
     },
     // 修改状态
     changeStatus(row) {
@@ -157,8 +135,7 @@ export default {
         commodityId: row.commodityId,
         status: row.status === 2 ? 1 : 2
       }).then(res => {
-        this.pageIndex = 1
-        this.search()
+        this.$refs.pagination.getData()
       })
     },
     // 多选
@@ -177,24 +154,16 @@ export default {
     // 查询用户列表
     search() {
       const params = {
-        pageIndex: this.pageIndex,
-        pageSize: this.pageSize,
+        ...this.$refs.pagination.pageData,
         ...this.searchData
       }
-      getCommodityListPage(params).then(response => {
-        this.listLoading = false
-        this.tableData = response.data.items
-        this.total = response.data.totalNum
+      return new Promise(resolve => {
+        getCommodityListPage(params).then(res => {
+          this.listLoading = false
+          this.tableData = res.data.items
+          resolve(res.data)
+        })
       })
-    },
-    handleSizeChange(val) {
-      this.pageSize = val
-      this.pageIndex = 1
-      this.search()
-    },
-    handleCurrentChange(val) {
-      this.pageIndex = val
-      this.search()
     },
     deleteRow(type, row) {
       if (type === 'all' && this.selection.length === 0) {
@@ -218,8 +187,7 @@ export default {
               message: res.msg
             })
             this.selection = []
-            this.pageIndex = 1
-            this.search()
+            this.$refs.pagination.getData()
           })
         })
         .catch(() => {
