@@ -46,30 +46,30 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard/person',
+    redirect: '/Electricity/person',
     meta: { title: '电工管理', icon: 'person' },
     alwaysShow: true, // will always show the root menu
     children: [
       {
-        path: '/dashboard/person',
+        path: '/Electricity/person',
         name: 'person',
         component: () => import('@/views/Electricity/dashboard/index'),
         meta: { title: '人员管理', icon: 'people' }
       },
       {
-        path: '/dashboard/levels',
+        path: '/Electricity/levels',
         name: 'levels',
         component: () => import('@/views/Electricity/levels/index'),
         meta: { title: '等级管理', icon: 'levels' }
       },
       {
-        path: '/dashboard/electrician',
+        path: '/Electricity/electrician',
         name: 'electrician',
         component: () => import('@/views/Electricity/electrician/index'),
         meta: { title: '电工查询', icon: 'electrician' }
       },
       {
-        path: '/dashboard/voucher',
+        path: '/Electricity/voucher',
         name: 'voucher',
         component: () => import('@/views/Electricity/voucher/index'),
         meta: { title: '证件审核', icon: 'voucher' }
@@ -85,55 +85,55 @@ export const constantRoutes = [
       {
         path: '/base/tabs',
         name: 'tabs',
-        component: () => import('@/views/baseDeploy/tabs/index'),
+        component: () => import('@/views/base/tabs/index'),
         meta: { title: '标签库', icon: 'tabs' }
       },
       {
         path: '/base/profession',
         name: 'profession',
-        component: () => import('@/views/baseDeploy/profession/index'),
+        component: () => import('@/views/base/profession/index'),
         meta: { title: '工种库', icon: 'profession' }
       },
       {
         path: '/base/cardpack',
         name: 'cardpack',
-        component: () => import('@/views/baseDeploy/cardpack/index'),
+        component: () => import('@/views/base/cardpack/index'),
         meta: { title: '卡包库', icon: 'cardpack' }
       },
       {
         path: '/base/worknode',
         name: 'worknode',
-        component: () => import('@/views/baseDeploy/worknode/index'),
+        component: () => import('@/views/base/worknode/index'),
         meta: { title: '作业节点库', icon: 'worknode' }
       },
       {
         path: '/base/workguide',
         name: 'workguide',
-        component: () => import('@/views/baseDeploy/workguide/index'),
+        component: () => import('@/views/base/workguide/index'),
         meta: { title: '作业指导书', icon: 'workguide' }
       },
       {
         path: '/base/worktemplate',
         name: 'worktemplate',
-        component: () => import('@/views/baseDeploy/worktemplate/index'),
+        component: () => import('@/views/base/worktemplate/index'),
         meta: { title: '作业模版库', icon: 'worktemplate' }
       },
       {
         path: '/base/question',
         name: 'question',
-        component: () => import('@/views/baseDeploy/question/index'),
+        component: () => import('@/views/base/question/index'),
         meta: { title: '题库管理', icon: 'question' }
       },
       {
         path: '/base/redpacket',
         name: 'redpacket',
-        component: () => import('@/views/baseDeploy/redpacket/index'),
+        component: () => import('@/views/base/redpacket/index'),
         meta: { title: '红包管理', icon: 'redpacket' }
       },
       {
         path: '/base/indentset',
         name: 'indentset',
-        component: () => import('@/views/baseDeploy/indentset/index'),
+        component: () => import('@/views/base/indentset/index'),
         meta: { title: '订单设置', icon: 'indentset' }
       }
     ]
