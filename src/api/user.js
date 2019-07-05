@@ -22,3 +22,9 @@ export function logout() {
     method: 'post'
   })
 }
+export function a() {
+  return request({
+    url: 'http://192.168.5.138:8080/',
+    method: 'get'
+  })
+}
