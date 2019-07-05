@@ -13,9 +13,8 @@
         <el-button @click="dialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
       </span>
-    </el-dialog> -->
-    <dragupload />
-
+    </el-dialog>-->
+    <!-- <dragupload /> -->
   </div>
 </template>
 
@@ -34,12 +33,12 @@ const defaultForm = {
   importance: 0
 }
 import { mapGetters } from 'vuex'
-import Chart from '@/components/Charts/Keyboard'
-import Tinymce from '@/components/Tinymce'
-import Dragupload from '@/components/Dragupload'
+// import Chart from '@/components/Charts/Keyboard'
+// import Tinymce from '@/components/Tinymce'
+// import Dragupload from '@/components/Dragupload'
 export default {
   name: 'Dashboard',
-  components: { Chart, Tinymce, Dragupload },
+  // components: { Chart, Tinymce, Dragupload },
   data() {
     return {
       postForm: Object.assign({}, defaultForm),

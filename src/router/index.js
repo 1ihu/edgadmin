@@ -49,94 +49,149 @@ export const constantRoutes = [
     redirect: '/dashboard/person',
     meta: { title: '电工管理', icon: 'person' },
     alwaysShow: true, // will always show the root menu
-    children: [{
-      path: '/dashboard/person',
-      name: 'person',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: '人员管理',icon:'people' }
-    }, {
-      path: '/dashboard/levels',
-      name: 'levels',
-      component: () => import('@/views/levels/index'),
-      meta: { title: '等级管理',icon:'levels' }
-    }, {
-      path: '/dashboard/electrician',
-      name: 'electrician',
-      component: () => import('@/views/electrician/index'),
-      meta: { title: '电工查询',icon:'electrician' }
-    }, {
-      path: '/dashboard/voucher',
-      name: 'voucher',
-      component: () => import('@/views/voucher/index'),
-      meta: { title: '证件审核',icon:'voucher' }
-    }]
-  }, {
+    children: [
+      {
+        path: '/dashboard/person',
+        name: 'person',
+        component: () => import('@/views/dashboard/index'),
+        meta: { title: '人员管理', icon: 'people' }
+      },
+      {
+        path: '/dashboard/levels',
+        name: 'levels',
+        component: () => import('@/views/levels/index'),
+        meta: { title: '等级管理', icon: 'levels' }
+      },
+      {
+        path: '/dashboard/electrician',
+        name: 'electrician',
+        component: () => import('@/views/electrician/index'),
+        meta: { title: '电工查询', icon: 'electrician' }
+      },
+      {
+        path: '/dashboard/voucher',
+        name: 'voucher',
+        component: () => import('@/views/voucher/index'),
+        meta: { title: '证件审核', icon: 'voucher' }
+      }
+    ]
+  },
+  {
     path: '/base',
     component: Layout,
     meta: { title: '基础配置', icon: 'base' },
     alwaysShow: true, // will always show the root menu
-    children: [{
-      path: '/base/tabs',
-      name: 'tabs',
-      component: () => import('@/views/tabs/index'),
-      meta: { title: '标签库',icon:'tabs' }
-    }, {
-      path: '/base/profession',
-      name: 'profession',
-      component: () => import('@/views/profession/index'),
-      meta: { title: '工种库',icon:'profession' }
-    }, {
-      path: '/base/cardpack',
-      name: 'cardpack',
-      component: () => import('@/views/cardpack/index'),
-      meta: { title: '卡包库',icon:'cardpack' }
-    }, {
-      path: '/base/worknode',
-      name: 'worknode',
-      component: () => import('@/views/worknode/index'),
-      meta: { title: '作业节点库' ,icon:'worknode'}
-    }, {
-      path: '/base/workguide',
-      name: 'workguide',
-      component: () => import('@/views/workguide/index'),
-      meta: { title: '作业指导书',icon:'workguide' }
-    }, {
-      path: '/base/worktemplate',
-      name: 'worktemplate',
-      component: () => import('@/views/worktemplate/index'),
-      meta: { title: '作业模版库' ,icon:'worktemplate'}
-    }, {
-      path: '/base/question',
-      name: 'question',
-      component: () => import('@/views/question/index'),
-      meta: { title: '题库管理',icon:'question' }
-    }, {
-      path: '/base/redpacket',
-      name: 'redpacket',
-      component: () => import('@/views/redpacket/index'),
-      meta: { title: '红包管理' ,icon:'redpacket'}
-    }, {
-      path: '/base/indentset',
-      name: 'indentset',
-      component: () => import('@/views/indentset/index'),
-      meta: { title: '订单设置' ,icon:'indentset'}
-    }]
-  }, {
+    children: [
+      {
+        path: '/base/tabs',
+        name: 'tabs',
+        component: () => import('@/views/tabs/index'),
+        meta: { title: '标签库', icon: 'tabs' }
+      },
+      {
+        path: '/base/profession',
+        name: 'profession',
+        component: () => import('@/views/profession/index'),
+        meta: { title: '工种库', icon: 'profession' }
+      },
+      {
+        path: '/base/cardpack',
+        name: 'cardpack',
+        component: () => import('@/views/cardpack/index'),
+        meta: { title: '卡包库', icon: 'cardpack' }
+      },
+      {
+        path: '/base/worknode',
+        name: 'worknode',
+        component: () => import('@/views/worknode/index'),
+        meta: { title: '作业节点库', icon: 'worknode' }
+      },
+      {
+        path: '/base/workguide',
+        name: 'workguide',
+        component: () => import('@/views/workguide/index'),
+        meta: { title: '作业指导书', icon: 'workguide' }
+      },
+      {
+        path: '/base/worktemplate',
+        name: 'worktemplate',
+        component: () => import('@/views/worktemplate/index'),
+        meta: { title: '作业模版库', icon: 'worktemplate' }
+      },
+      {
+        path: '/base/question',
+        name: 'question',
+        component: () => import('@/views/question/index'),
+        meta: { title: '题库管理', icon: 'question' }
+      },
+      {
+        path: '/base/redpacket',
+        name: 'redpacket',
+        component: () => import('@/views/redpacket/index'),
+        meta: { title: '红包管理', icon: 'redpacket' }
+      },
+      {
+        path: '/base/indentset',
+        name: 'indentset',
+        component: () => import('@/views/indentset/index'),
+        meta: { title: '订单设置', icon: 'indentset' }
+      }
+    ]
+  },
+  {
     path: '/agreement',
     component: Layout,
     meta: { title: '协议管理', icon: 'agreement' },
     alwaysShow: true, // will always show the root menu
-    children: [{
-      path: '/agreement/setting',
-      name: 'setting',
-      component: () => import('@/views/setting/index'),
-      meta: { title: '协议设置' ,icon:'setting'}
-    }, {
-      path: '/agreement/examine',
-      name: 'examine',
-      component: () => import('@/views/examine/index'),
-      meta: { title: '协议查看',icon:'examine' }
-    }]
+    children: [
+      {
+        path: '/agreement/setting',
+        name: 'setting',
+        component: () => import('@/views/setting/index'),
+        meta: { title: '协议设置', icon: 'setting' }
+      },
+      {
+        path: '/agreement/examine',
+        name: 'examine',
+        component: () => import('@/views/examine/index'),
+        meta: { title: '协议查看', icon: 'examine' }
+      }
+    ]
+  },
+  {
+    path: '/appSetting',
+    component: Layout,
+    meta: { title: 'app设置', icon: 'agreement' },
+    alwaysShow: true, // will always show the root menu
+    children: [
+      {
+        path: '/appSetting/pageSetting',
+        name: 'pageSetting',
+        component: () => import('@/views/appSetting/pageSetting/index'),
+        meta: { title: '页面设置', icon: 'setting' }
+      }
+    ]
+  },
+  {
+    path: '/shopping',
+    component: Layout,
+    meta: { title: '红包商城', icon: 'agreement' },
+    alwaysShow: true, // will always show the root menu
+    children: [
+      {
+        path: '/shopping/goods',
+        name: 'goods',
+        component: () => import('@/views/shopping/goods/index'),
+        meta: { title: '商品列表', icon: 'setting' }
+      },
+      {
+        path: '/shopping/goods/edit',
+        name: 'goodsEdit',
+        hidden: true,
+        component: () => import('@/views/shopping/goods/edit/index'),
+        meta: { title: '商品编辑', icon: 'setting' }
+      }
+    ]
   },
 
   {
@@ -154,11 +209,12 @@ export const constantRoutes = [
   { path: '*', redirect: '/404', hidden: true }
 ]
 
-const createRouter = () => new Router({
-  // mode: 'history', // require service support
-  scrollBehavior: () => ({ y: 0 }),
-  routes: constantRoutes
-})
+const createRouter = () =>
+  new Router({
+    // mode: 'history', // require service support
+    scrollBehavior: () => ({ y: 0 }),
+    routes: constantRoutes
+  })
 
 const router = createRouter()
 

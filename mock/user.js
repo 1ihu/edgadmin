@@ -41,7 +41,7 @@ export default [
       }
 
       return {
-        code: 20000,
+        code: 1,
         data: token
       }
     }
@@ -64,7 +64,7 @@ export default [
       }
 
       return {
-        code: 20000,
+        code: 1,
         data: info
       }
     }

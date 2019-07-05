@@ -13,3 +13,9 @@ export function setToken(token) {
 export function removeToken() {
   return Cookies.remove(TokenKey)
 }
+export const upload = {
+  url: `${process.env.VUE_APP_BASE_API}/portal/addPortalFile`,
+  headers: {
+    Authorization: `Bearer ${getToken()}`
+  }
+}
