@@ -27,6 +27,7 @@ const pub = {
 }
 export default [
   // 订单列表
+  //分页查询订单集合
   {
     url: '/shopping/shop/getOrderListPage',
     type: 'post',
@@ -37,6 +38,80 @@ export default [
           ...order,
           ...pub
         },
+        msg: ''
+      }
+    }
+  },
+  //新增保存订单
+  {
+    url: '/shopping/shop/addOrder',
+    type: 'post',
+    response: config => {
+      return {
+        code: 1,
+        data: {
+          ...order
+        },
+        msg: ''
+      }
+    }
+  },
+  //根据id查询订单
+  {
+    url: '/shopping/shop/getOrderById',
+    type: 'get',
+    response: config => {
+      return {
+        code: 1,
+        data: order.items[0],
+        msg: ''
+      }
+    }
+  },
+  //根据参数查询订单
+  {
+    url: '/shopping/shop/getOrderList',
+    type: 'post',
+    response: config => {
+      return {
+        code: 1,
+        data: [...order.items],
+        msg: ''
+      }
+    }
+  },
+  //修改保存订单
+  {
+    url: '/shopping/shop/modifyOrder',
+    type: 'post',
+    response: config => {
+      return {
+        code: 1,
+        data: {...order},
+        msg: ''
+      }
+    }
+  },
+  //修改订单状态
+  {
+    url: '/shopping/shop/modifyOrderStatus',
+    type: 'post',
+    response: config => {
+      return {
+        code: 1,
+        data: {...order},
+        msg: ''
+      }
+    }
+  },
+  //删除订单
+  {
+    url: '/shopping/shop/removeOrder',
+    type: 'post',
+    response: config => {
+      return {
+        code: 1,
+        data: {...order},
         msg: ''
       }
     }

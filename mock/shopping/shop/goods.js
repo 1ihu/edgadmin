@@ -22,6 +22,7 @@ const pub = {
 }
 export default [
   // 商品列表
+  //分页查询商品集合
   {
     url: '/shopping/shop/getCommodityListPage',
     type: 'post',
@@ -36,6 +37,7 @@ export default [
       }
     }
   },
+  //新增保存商品
   {
     url: '/shopping/shop/addCommodity',
     type: 'post',
@@ -47,6 +49,7 @@ export default [
       }
     }
   },
+  //删除商品
   {
     url: '/shopping/shop/removeCommodity',
     type: 'post',
@@ -58,6 +61,7 @@ export default [
       }
     }
   },
+  //修改保存商品
   {
     url: '/shopping/shop/modifyCommodity',
     type: 'post',
@@ -69,6 +73,7 @@ export default [
       }
     }
   },
+  //根据ID查询商品完整信息
   {
     url: '/shopping/shop/getCommodityInfoById',
     type: 'get',
@@ -79,5 +84,44 @@ export default [
         msg: ''
       }
     }
+  },
+  //根据ID查询商品
+  {
+  	url:'/shopping/shop/getCommodityById',
+  	type:'get',
+  	response: config => {
+  		return {
+  			code:1,
+  			data:goods.items[0],
+  			msg:''
+  		}
+  	}
+  }
+  //根据参数查询商品
+  {
+  	url:'/shopping/shop/getCommodityList',
+  	type:'post',
+  	response: config => {
+  		return {
+        code: 1,
+        data: [ ...goods.items],
+        msg: ''
+      }
+  	}
+  },
+  //分页查询商品完整信息集合
+  {
+  	url:'/shopping/shop/listCommodityInfo',
+  	type:'post',
+  	response: config => {
+  		return {
+        code: 1,
+        data: { 
+        	...goods,
+        	...pub
+        },
+        msg: ''
+      }
+  	}
   }
 ]
