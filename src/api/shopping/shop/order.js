@@ -9,7 +9,7 @@ export function getOrderListPage(data) {
 }
 //新增保存订单
 export function addOrder(data){
-	return resuest({
+	return request({
 		url:`/shopping/shop/addOrder`,
 		method:'post',
 		data
@@ -17,7 +17,7 @@ export function addOrder(data){
 }
 //根据id查询订单
 export function getOrderById(params){
-	return resuest({
+	return request({
 		url:`/shopping/shop/getOrderById`,
 		method:'get',
 		params
@@ -25,7 +25,7 @@ export function getOrderById(params){
 }
 //根据参数查询订单
 export function getOrderList(data){
-	return resuest({
+	return request({
 		url:`/shopping/shop/getOrderList`,
 		method:'post',
 		data
