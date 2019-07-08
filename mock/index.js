@@ -4,10 +4,12 @@ import { param2Obj } from '../src/utils'
 import user from './user'
 import table from './table'
 import appSetting from './appSetting'
-import shopping from './shopping'
+import shopping_shop_goods from './shopping/shop/goods'
+import shopping_shop_order from './shopping/shop/order'
 
 const mocks = [
-  ...shopping,
+  ...shopping_shop_goods,
+  ...shopping_shop_order,
   ...appSetting,
   ...user,
   ...table

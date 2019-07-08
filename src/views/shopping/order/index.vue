@@ -42,9 +42,10 @@
       <el-table-column prop="price" label="兑换总金额" align="center" />
       <el-table-column prop="statusString" label="状态" align="center" />
       <el-table-column prop="placeTime" label="创建时间" align="center" />
-      <el-table-column label="操作" align="center">
+      <el-table-column label="操作" align="center" width="180">
         <template slot-scope="scope">
-          <el-button type="primary" :size="tablebtn" plain @click="handleClick(scope.row)">修改</el-button>
+          <el-button type="primary" :size="tablebtn" plain @click="handleClick(scope.row)">查看</el-button>
+          <el-button type="primary" :size="tablebtn" plain @click="handleClick(scope.row)">处理</el-button>
         </template>
       </el-table-column>
     </el-table>
