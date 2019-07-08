@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-container">
     <div class="from_control">
       <div class="from_class">
         <el-select v-model="type" :size="size" style="width: 50%;" placeholder="商品类型">
@@ -22,8 +22,6 @@
         <el-input v-model="commodityNo" placeholder="商品编号" :size="size" clearable />
         <el-button class="marginleft" icon="el-icon-search" type="primary" @click="searchClick">搜索</el-button>
         <el-button class="marginleft" type="primary" @click="resetSearch">重置</el-button>
-      </div>
-      <div class="from-btns">
         <el-button :size="size" icon="el-icon-plus" type="primary" @click="handleClick">添加</el-button>
         <el-button :size="size" type="primary" @click="deleteRow('all')">批量删除</el-button>
       </div>
@@ -39,7 +37,7 @@
       <el-table-column type="selection" width="55" />
       <el-table-column prop="commodityName" label="商品名称" align="center" />
       <el-table-column prop="commodityNo" label="商品编号" align="center" />
-      <el-table-column prop="categoryString" label="商品类型" align="center" />
+      <el-table-column prop="typeString" label="商品类型" align="center" />
       <el-table-column prop="price" label="兑换金额" align="center" />
       <el-table-column prop="stock" label="库存" align="center" />
       <el-table-column prop="releaseTime" label="上架时间" align="center" />
