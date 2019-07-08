@@ -190,6 +190,12 @@ export const constantRoutes = [
         hidden: true,
         component: () => import('@/views/shopping/goods/edit/index'),
         meta: { title: '商品编辑', icon: 'setting' }
+      },
+      {
+        path: '/shopping/order',
+        name: 'order',
+        component: () => import('@/views/shopping/order/index'),
+        meta: { title: '订单列表', icon: 'setting' }
       }
     ]
   },
