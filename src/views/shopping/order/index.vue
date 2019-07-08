@@ -58,7 +58,7 @@
 import {
   getOrderListPage,
   modifyCommodity
-} from '@/api/shopping'
+} from '@/api/shopping/shop/order'
 import pagination from '@/components/pagination'
 export default {
   components: { pagination },
