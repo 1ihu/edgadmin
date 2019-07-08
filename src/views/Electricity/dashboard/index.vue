@@ -14,10 +14,9 @@
         <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
       </span>
     </el-dialog>-->
-    <!-- <dragupload /> -->
+    <dragupload />
   </div>
 </template>
-
 <script>
 const defaultForm = {
   status: 'draft',
@@ -35,10 +34,10 @@ const defaultForm = {
 import { mapGetters } from 'vuex'
 // import Chart from '@/components/Charts/Keyboard'
 // import Tinymce from '@/components/Tinymce'
-// import Dragupload from '@/components/Dragupload'
+import Dragupload from '@/components/Dragupload'
 export default {
   name: 'Dashboard',
-  // components: { Chart, Tinymce, Dragupload },
+  components: { Dragupload },
   data() {
     return {
       postForm: Object.assign({}, defaultForm),
