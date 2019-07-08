@@ -6,8 +6,12 @@ import table from './table'
 import appSetting from './appSetting'
 import shopping_shop_goods from './shopping/shop/goods'
 import shopping_shop_order from './shopping/shop/order'
+import general_sms from './general/sms'
+import general_push from './general/push'
 
 const mocks = [
+  ...general_sms,
+  ...general_push,
   ...shopping_shop_goods,
   ...shopping_shop_order,
   ...appSetting,
