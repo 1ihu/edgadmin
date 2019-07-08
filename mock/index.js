@@ -6,9 +6,9 @@ import table from './table'
 import appSetting from './appSetting'
 import shopping_shop_goods from './shopping/shop/goods'
 import shopping_shop_order from './shopping/shop/order'
+import shopping_shop_redpack from './shopping/redpack/index'
 import general_sms from './general/sms'
 import general_push from './general/push'
-
 const mocks = [
   ...general_sms,
   ...general_push,
@@ -16,7 +16,8 @@ const mocks = [
   ...shopping_shop_order,
   ...appSetting,
   ...user,
-  ...table
+  ...table,
+  ...shopping_shop_redpack
 ]
 
 // for front mock
