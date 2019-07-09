@@ -56,8 +56,7 @@
 <script>
 
 import {
-  getOrderListPage,
-  modifyCommodity
+  getOrderListPage
 } from '@/api/shopping/shop/order'
 import pagination from '@/components/pagination'
 export default {
@@ -96,10 +95,8 @@ export default {
       searchData: {}
     }
   },
-  created() {
-    // this.search() // 拉去table
-  },
   methods: {
+    // 重置搜索
     resetSearch() {
       this.searchData = {}
       this.status = ''
@@ -117,29 +114,16 @@ export default {
       }
       this.$refs.pagination.getData()
     },
-    // 修改状态
-    changeStatus(row) {
-      modifyCommodity({
-        commodityId: row.commodityId,
-        status: row.status === 2 ? 1 : 2
-      }).then(res => {
-        this.$refs.pagination.getData()
-      })
-    },
-    // 多选
-    handleSelectionChange(arr) {
-      this.selection = arr.map(item => item.commodityId)
-    },
-    // 用户编辑 添加
+    // 编辑 添加
     handleClick(row) {
       this.$router.push({
-        path: '/shopping/goods/edit',
+        path: '/shopping/order/edit',
         query: {
-          commodityId: row.commodityId
+          orderId: row.orderId
         }
       })
     },
-    // 查询用户列表
+    // 查询列表
     search() {
       const params = {
         ...this.$refs.pagination.pageData,
@@ -154,7 +138,6 @@ export default {
               ...item.orderCommodityVoList[0]
             }
           })
-          console.log(this.tableData)
           resolve(res.data)
         })
       })

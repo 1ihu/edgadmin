@@ -196,6 +196,13 @@ export const constantRoutes = [
         name: 'order',
         component: () => import('@/views/shopping/order/index'),
         meta: { title: '订单列表', icon: 'setting' }
+      },
+      {
+        path: '/shopping/order/edit',
+        name: 'orderEdit',
+        hidden: true,
+        component: () => import('@/views/shopping/order/edit'),
+        meta: { title: '订单编辑', icon: 'setting' }
       }
     ]
   },
