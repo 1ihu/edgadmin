@@ -116,7 +116,7 @@ export const constantRoutes = [
         path: '/base/worktemplate',
         name: 'worktemplate',
         component: () => import('@/views/base/worktemplate/index'),
-        meta: { title: '作业模版库', icon: 'worktemplate' }
+        meta: { title: '任务模版库', icon: 'worktemplate' }
       },
       {
         path: '/base/question',

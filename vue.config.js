@@ -60,10 +60,11 @@ module.exports = {
     }
   },
   chainWebpack(config) {
+    // Kb0Z98j7gp26ogeSGbvUHoC94lLNzbqc
     const cdn = {
       // inject tinymce into index.html
       // why use this cdn, detail see https://github.com/PanJiaChen/tinymce-all-in-one
-      js: ['https://cdn.jsdelivr.net/npm/tinymce-all-in-one@4.9.3/tinymce.min.js']
+      js: ['https://cdn.jsdelivr.net/npm/tinymce-all-in-one@4.9.3/tinymce.min.js', 'http://api.map.baidu.com/api?v=2.0&ak=Kb0Z98j7gp26ogeSGbvUHoC94lLNzbqc']
     }
     config.plugin('html')
       .tap(args => {

@@ -13,32 +13,31 @@
 import plupload from 'plupload'
 
 var accessid = ''
-var accesskey = ''
+// var accesskey = ''
 var host = ''
 var policyBase64 = ''
 var signature = ''
 var callbackbody = ''
-var filename = ''
+// var filename = ''
 var key = ''
 var expire = 0
 var g_object_name = ''
 var g_object_name_type = ''
 var now = Date.parse(new Date()) / 1000
-var timestamp = Date.parse(new Date()) / 1000
+// const timestamp = Date.parse(new Date()) / 1000
 
 function send_request() {
   var xmlhttp = 'http://192.168.5.138:8080/'
   if (window.XMLHttpRequest) {
     xmlhttp = new XMLHttpRequest()
   } else if (window.ActiveXObject) {
+    // eslint-disable-next-line no-undef
     xmlhttp = new ActiveXObject('Microsoft.XMLHTTP')
   }
-
   if (xmlhttp != null) {
     // serverUrl是 用户获取 '签名和Policy' 等信息的应用服务器的URL，请将下面的IP和Port配置为您自己的真实信息。
     // serverUrl = 'http://88.88.88.88:8888/aliyun-oss-appserver-php/php/get.php'
     const serverUrl = 'http://192.168.5.138:8080/'
-
     xmlhttp.open('GET', serverUrl, false)
     xmlhttp.send(null)
     return xmlhttp.responseText
@@ -46,7 +45,6 @@ function send_request() {
     alert('Your browser does not support XMLHTTP.')
   }
 }
-
 function check_object_radio() {
   var tt = document.getElementsByName('myradio')
   for (var i = 0; i < tt.length; i++) {
@@ -56,10 +54,9 @@ function check_object_radio() {
     }
   }
 }
-
 function get_signature() {
   // 可以判断当前expire是否超过了当前时间， 如果超过了当前时间， 就重新取一下，3s 作为缓冲。
-  now = timestamp = Date.parse(new Date()) / 1000
+  now = Date.parse(new Date()) / 1000
   if (expire < now + 3) {
     const body = send_request()
     // eslint-disable-next-line no-eval
